@@ -68,6 +68,7 @@ body {
 .profile-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .pic-name-container {
@@ -80,8 +81,8 @@ body {
 }
 
 .profile-picture {
-    height: 250px;
-    width: 250px;
+    height: 300px;
+    width: 300px;
     margin-bottom: 20px;
 }
 
@@ -92,7 +93,46 @@ body {
     margin: 0 auto;
 }
 
+.telephone-container {
+    width: 300px;
+    margin-top: 5px;
+    display: flex;
+    align-items: flex-start;
+    justify-content:space-between;
+    align-items: center;
+    padding: 8px 16px;
+    font-style: italic;
+}
+
+.telephone-container i {
+    font-size: 24px;
+    margin-right: 15px;
+}
+
+.contact-container {
+    margin-top: 5px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 26px;
+}
+
+.contact-container > a >  i {
+    transition: .2s ease;
+    color: var(--gray);
+}
+
+.contact-container > a > i:hover {
+    font-size: 40px;
+}
+.contact-container > a:visited {
+    color: var(--gray);
+}
+
 .skills-container {
+    overflow: auto;
+    max-width: 700px;
     padding: 10px 50px;
 }
 
@@ -139,6 +179,7 @@ body {
     list-style-type: disc;
     margin-bottom: 15px;
 }
+
 .skill-content > ul > li{
     margin-bottom: 10px;
 }
@@ -157,5 +198,27 @@ body {
 @media only screen and (max-width: 960px) {
     .container {
         flex-direction: column;
+    }
+    .profile-container {
+        margin-bottom: 50px;
+    }
+    
+}
+
+@media only screen and (max-width: 550px) {
+    .skills-container {
+        padding: 0px;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .profile-picture {
+        display: none;
+    }
+    .telephone-container {
+        width: 100%;
+    }
+    .contact-container{
+        width: 100%;
     }
 }
