@@ -1,4 +1,5 @@
 const toggleLanguage = document.getElementById("language-checkbox");
+const switchLabel = document.getElementById("switch-label");
 const bioText = document.getElementById("bio-text");
 
 const educationTitle = document.getElementById("education-title");
@@ -110,8 +111,10 @@ function toggleAll(pos){
 function toggleCheckbox(){
     if(toggleLanguage.checked){
         document.cookie = "language=1";
+        document.getElementsByClassName('switch')[0].style.background = "var(--egg-yellow)";
         toggleAll(1);
     } else {
+        document.getElementsByClassName('switch')[0].style.background = "var(--blackish)";
         document.cookie = "language=0";
         toggleAll(0);
     }
@@ -122,6 +125,7 @@ let cookies = document.cookie.split(" ");
 for(let i = 0; i < cookies.length; i++){
     let [splittedCookie, cookieValue] = cookies[i].split("=");
     if(splittedCookie == "language" && cookieValue == "1"){
+        document.getElementsByClassName('switch')[0].style.background = "var(--egg-yellow)";
         toggleLanguage.checked = true;   
         toggleAll(1);
     }
