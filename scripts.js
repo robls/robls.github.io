@@ -1,5 +1,4 @@
 const toggleLanguage = document.getElementById("language-checkbox");
-
 const bioText = document.getElementById("bio-text");
 
 const educationTitle = document.getElementById("education-title");
@@ -20,7 +19,6 @@ const leafAreaTime = document.getElementById("leaf-area-time");
 const leafAreaContent = document.getElementById("leaf-area-content");
 const uniAjudaTime = document.getElementById("uni-ajuda-time");
 const uniAjudaContent = document.getElementById("uni-ajuda-content");
-
 
 const bioSectionObject = {
     "text": [
@@ -102,17 +100,29 @@ function toggleProjectsSectionLanguage(pos){
     uniAjudaTime.innerHTML = projectsSectionObject.uniAjudaTime[pos];
     uniAjudaContent.innerHTML = projectsSectionObject.uniAjudaContent[pos];
 }
+function toggleAll(pos){
+    toggleBioSectionLanguage(pos);
+    toggleEducationSectionLanguage(pos);
+    toggleWorkExperienceSectionLanguage(pos);
+    toggleProjectsSectionLanguage(pos);
+}
 
 function toggleCheckbox(){
     if(toggleLanguage.checked){
-        toggleBioSectionLanguage(1);
-        toggleEducationSectionLanguage(1);
-        toggleWorkExperienceSectionLanguage(1);
-        toggleProjectsSectionLanguage(1);
+        document.cookie = "language=1";
+        toggleAll(1);
     } else {
-        toggleBioSectionLanguage(0);
-        toggleEducationSectionLanguage(0);
-        toggleWorkExperienceSectionLanguage(0);
-        toggleProjectsSectionLanguage(0);
+        document.cookie = "language=0";
+        toggleAll(0);
     }
 }
+
+let cookies = document.cookie.split(" ");
+
+for(let i = 0; i < cookies.length; i++){
+    let [splittedCookie, cookieValue] = cookies[i].split("=");
+    if(splittedCookie == "language" && cookieValue == "1"){
+        toggleLanguage.checked = true;   
+        toggleAll(1);
+    }
+};
