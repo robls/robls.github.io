@@ -1,56 +1,42 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
 }
 
 body {
-	line-height: 1;
+    line-height: 1;
 }
 
 blockquote, q {
-	quotes: none;
+    quotes: none;
 }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
 }
 
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 body * {
     font-family: 'Newsreader', serif;
 }
 
-:root{
+:root {
     --gray: #4F4E4F;
     --blue: #64BCC4;
-    --white:#fafafa;
+    --white: #fafafa;
 }
 
 body {
@@ -76,8 +62,8 @@ body {
     flex-direction: column;
     align-items: center;
     font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
 }
 
 .profile-picture {
@@ -98,7 +84,7 @@ body {
     margin-top: 5px;
     display: flex;
     align-items: flex-start;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
     padding: 8px 16px;
     font-style: italic;
@@ -115,18 +101,19 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 26px;
+    font-size: 24px;
 }
 
-.contact-container > a >  i {
+.contact-container>a>i {
     transition: .2s ease;
     color: var(--gray);
 }
 
-.contact-container > a > i:hover {
-    font-size: 40px;
+.contact-container>a>i:hover {
+    font-size: 32px;
 }
-.contact-container > a:visited {
+
+.contact-container>a:visited {
     color: var(--gray);
 }
 
@@ -145,7 +132,7 @@ body {
 }
 
 .skill-title {
-    font-size: 26px;
+    font-size: 24px;
     font-weight: 600;
 }
 
@@ -153,46 +140,81 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 5px;
 }
 
 .skill-subtitle {
-    font-size: 18px;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .skill-subtitle-time {
-    font-size: 14px;
+    font-size: 12px;
     font-style: italic;
+    margin-left: 5px;
 }
 
 .skill-content {
     margin-top: 10px;
-}
-
-.skill-content > p {
-    font-style: italic;
-    margin-bottom: 5px;
-}
-
-.skill-content > ul {
-    list-style-type: disc;
-    margin-bottom: 15px;
-}
-
-.skill-content > ul > li{
+    text-align: justify;
     margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.work-subtitle {
+    margin-top: 5px;
+    font-style: italic;
 }
 
 .footer {
     display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
 }
 
 .offset-shadow {
-    -webkit-box-shadow: 10px 8px 0px -3px var(--gray); 
+    -webkit-box-shadow: 10px 8px 0px -3px var(--gray);
     box-shadow: 10px 8px 0px -3px var(--gray);
+}
+
+.switch-container {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.switch input {
+    position: absolute;
+    opacity: 0;
+}
+
+.switch {
+    margin-left: 10px;
+    margin-right: 10px;
+    display: inline-block;
+    font-size: 20px;
+    height: 1em;
+    width: 2em;
+    background: var(--gray);
+    border-radius: 1em;
+}
+
+.switch div {
+    height: 1em;
+    width: 1em;
+    border-radius: 1em;
+    background: #FFF;
+    box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.3);
+    -webkit-transition: all 300ms;
+    -moz-transition: all 300ms;
+    transition: all 300ms;
+}
+
+.switch input:checked+div {
+    -webkit-transform: translate3d(100%, 0, 0);
+    -moz-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
 }
 
 @media only screen and (max-width: 960px) {
@@ -202,7 +224,6 @@ body {
     .profile-container {
         margin-bottom: 50px;
     }
-    
 }
 
 @media only screen and (max-width: 550px) {
@@ -218,7 +239,7 @@ body {
     .telephone-container {
         width: 100%;
     }
-    .contact-container{
+    .contact-container {
         width: 100%;
     }
 }
