@@ -41,7 +41,7 @@ const educationSectionObject = {
 const workExperienceSectionObject = {
     "title": ["Experiência Profissional", "Work Experience"],
     "magitTitle": ["Desenvolvedor Jr. FullStack MAG IT Partner", "Junior FullStack Developer at MAG IT Partner"],
-    "magitTime": ["Maio 2020 - Em andamento", "May 2020 - Ongoing"],
+    "magitTime": ["Maio 2020 - Março 2021", "May 2020 - March 2021"],
     "magitSubtitle": [
         "Empresa especializada em desenvolvimento de softwares e terceirização de serviços de TI",
         "Company that specializes in software development and IT service outsourcing"
@@ -101,6 +101,7 @@ function toggleProjectsSectionLanguage(pos){
     uniAjudaTime.innerHTML = projectsSectionObject.uniAjudaTime[pos];
     uniAjudaContent.innerHTML = projectsSectionObject.uniAjudaContent[pos];
 }
+
 function toggleAll(pos){
     toggleBioSectionLanguage(pos);
     toggleEducationSectionLanguage(pos);
